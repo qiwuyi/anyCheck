@@ -1,0 +1,58 @@
+{
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+"navigationBarTitleText": "随心check",
+			"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/habit/create",
+			"style": {
+				"navigationBarTitleText": "创建习惯",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/habit/edit",
+			"style": {
+				"navigationBarTitleText": "编辑习惯",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/record/index",
+			"style": {
+				"navigationBarTitleText": "统计",
+				"navigationStyle": "custom"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "随心check",
+		"navigationBarBackgroundColor": "#FDF8F3",
+		"backgroundColor": "#FDF8F3"
+	},
+  "tabBar": {
+    "color": "#8B7355",
+    "selectedColor": "#C17F59",
+    "backgroundColor": "#FDF8F3",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "打卡",
+        "iconPath": "static/tab-home.png",
+        "selectedIconPath": "static/tab-home-active.png"
+      },
+      {
+        "pagePath": "pages/record/index",
+        "text": "统计",
+        "iconPath": "static/tab-stats.png",
+        "selectedIconPath": "static/tab-stats-active.png"
+      }
+    ]
+  }
+}
