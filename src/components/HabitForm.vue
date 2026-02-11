@@ -6,17 +6,19 @@
         <Type :size="16" class="text-[#C17F59] mr-2" />
         <view class="text-sm text-[#5C4A3D] font-medium">习惯名称</view>
       </view>
-      <view class="relative">
-        <input 
-          v-model="formData.name"
-          class="w-full text-base h-14 bg-white border-2 border-[#F0E6DC] rounded-2xl px-5 focus:outline-none focus:border-[#C17F59] transition-all placeholder-[#C4B5A5]"
-          placeholder="例如：每天喝水 8 杯"
-        />
-        <view 
-          v-if="formData.name"
-          class="absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-[#7A8B6E]/10 flex items-center justify-center"
-        >
-          <Check :size="14" class="text-[#7A8B6E]" />
+      <view class="bg-white p-4 rounded-2xl border border-[#F0E6DC]">
+        <view class="relative">
+          <input
+            v-model="formData.name"
+            class="w-full text-base h-12 bg-transparent border-none px-1 focus:outline-none transition-all placeholder-[#C4B5A5]"
+            placeholder="例如：每天喝水 8 杯"
+          />
+          <view
+            v-if="formData.name"
+            class="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-[#7A8B6E]/10 flex items-center justify-center"
+          >
+            <Check :size="14" class="text-[#7A8B6E]" />
+          </view>
         </view>
       </view>
     </view>
@@ -27,18 +29,19 @@
         <Smile :size="16" class="text-[#C17F59] mr-2" />
         <view class="text-sm text-[#5C4A3D] font-medium">选择图标</view>
       </view>
-      <view class="bg-white p-4 rounded-2xl border border-[#F0E6DC]">
-        <view class="grid grid-cols-6 gap-3">
+      <view class="bg-white p-6 rounded-2xl border border-[#F0E6DC]">
+        <view class="grid grid-cols-4 gap-4">
           <view
-            v-for="icon in icons"
+            v-for="(icon, index) in icons"
             :key="icon"
-            class="h-12 w-12 flex items-center justify-center rounded-xl text-2xl transition-all duration-200 active:scale-90"
-            :class="formData.icon === icon 
-              ? 'bg-[#C17F59] text-white shadow-md' 
-              : 'bg-[#F5EDE4] hover:bg-[#E8D5C4]'"
+            class="aspect-square flex items-center justify-center rounded-2xl text-[32px] transition-all duration-300 cursor-pointer"
+            :class="formData.icon === icon
+              ? 'bg-gradient-to-br from-[#C17F59] to-[#A66B48] text-white shadow-lg shadow-[#C17F59]/30 scale-105'
+              : 'bg-[#FAF7F4] hover:bg-[#F5EDE4] border border-[#F0E6DC]/50'"
+            :style="{ animationDelay: `${index * 30}ms` }"
             @tap="formData.icon = icon"
           >
-            {{ icon }}
+            <text class="drop-shadow-sm">{{ icon }}</text>
           </view>
         </view>
       </view>
@@ -50,19 +53,19 @@
         <Palette :size="16" class="text-[#C17F59] mr-2" />
         <view class="text-sm text-[#5C4A3D] font-medium">主题颜色</view>
       </view>
-      <view class="bg-white p-4 rounded-2xl border border-[#F0E6DC]">
-        <view class="flex space-x-3 overflow-x-auto pb-1">
+      <view class="bg-white p-6 rounded-2xl border border-[#F0E6DC]">
+        <view class="grid grid-cols-4 gap-5">
           <view
             v-for="color in colors"
             :key="color"
-            class="w-12 h-12 rounded-full transition-all duration-200 flex-shrink-0 active:scale-90 flex items-center justify-center"
+            class="aspect-square rounded-2xl transition-all duration-200 active:scale-90 flex items-center justify-center"
             :style="{ backgroundColor: color }"
-            :class="formData.color === color 
-              ? 'ring-3 ring-[#5C4A3D] ring-offset-2 scale-110 shadow-md' 
-              : 'opacity-90 hover:opacity-100'"
+            :class="formData.color === color
+              ? 'ring-[4px] ring-[#5C4A3D] ring-offset-[4px] scale-105 shadow-lg'
+              : 'opacity-90 hover:opacity-100 hover:scale-105'"
             @tap="formData.color = color"
           >
-            <Check v-if="formData.color === color" :size="20" class="text-white" stroke-width="3" />
+            <Check v-if="formData.color === color" :size="32" class="text-white" stroke-width="3" />
           </view>
         </view>
       </view>

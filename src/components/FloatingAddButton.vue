@@ -1,6 +1,6 @@
 <template>
   <!-- Adjusted bottom spacing to avoid native TabBar (approx 50px) + gap -->
-  <view class="fixed bottom-[75px] left-1/2 -translate-x-1/2 z-[9999] flex justify-center items-center pointer-events-none">
+  <view class="fixed bottom-[10px] left-1/2 -translate-x-1/2 z-[10000] flex justify-center items-center pointer-events-none">
     <view 
       class="pointer-events-auto group relative w-[64px] h-[64px] flex items-center justify-center transition-transform duration-300 active:scale-95"
       @tap="goToCreate"

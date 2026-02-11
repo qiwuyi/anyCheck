@@ -196,6 +196,9 @@
       <!-- Custom TabBar -->
       <CustomTabBar />
 
+      <!-- Floating Add Button -->
+      <FloatingAddButton />
+
     </view>
   </PageLayout>
 </template>
@@ -214,6 +217,7 @@ import {
 import PageLayout from '@/components/Layout/PageLayout.vue';
 import HabitCard from '@/components/HabitCard.vue';
 import CustomTabBar from '@/components/CustomTabBar.vue';
+import FloatingAddButton from '@/components/FloatingAddButton.vue';
 import { useHabitStore } from '@/stores/habit';
 
 dayjs.locale('zh-cn');
