@@ -11,7 +11,7 @@
       <view class="flex items-center py-1">
         <!-- 左侧：大图标 -->
         <view
-          class="w-14 h-14 rounded-xl flex items-center justify-center text-3xl flex-shrink-0 mr-4 transition-all duration-300"
+          class="w-14 h-14 rounded-xl flex items-center justify-center text-3xl flex-shrink-0 mr-5 transition-all duration-300"
           :class="isCompleted ? 'opacity-60' : ''"
           :style="{ backgroundColor: habit.color + '15', color: habit.color }"
         >
